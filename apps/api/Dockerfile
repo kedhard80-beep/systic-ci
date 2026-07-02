@@ -17,7 +17,7 @@ RUN npm install --legacy-peer-deps
 
 # 2. Copier le code source + schema Prisma
 COPY apps/api/ .
-COPY packages/database/prisma ./prisma
+COPY packages/database/prisma/schema.prisma ./prisma/schema.prisma
 
 # 3. Générer le client Prisma v6
 RUN npx prisma@6 generate
