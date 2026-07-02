@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "rootDirectory": "apps/web",
+  "installCommand": "npm install --legacy-peer-deps",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "regions": ["cdg1"],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@systic_api_url"
+  }
+}

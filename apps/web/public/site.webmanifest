@@ -1,0 +1,21 @@
+{
+  "name": "SYSTIC-CI — Informatique & Sécurité Électronique",
+  "short_name": "SYSTIC-CI",
+  "description": "N°1 de la sécurité électronique à Abidjan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1A45C9",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ]
+}

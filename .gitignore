@@ -1,0 +1,61 @@
+# ── Environnements (NE JAMAIS COMMITTER) ─────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+apps/api/.env
+apps/web/.env.local
+
+# ── Node ──────────────────────────────────────────────────────
+node_modules/
+*/node_modules/
+.npm
+
+# ── Next.js ───────────────────────────────────────────────────
+apps/web/.next/
+apps/web/out/
+apps/web/build/
+
+# ── NestJS / TypeScript ───────────────────────────────────────
+apps/api/dist/
+*.js.map
+
+# ── Prisma ────────────────────────────────────────────────────
+packages/database/node_modules/
+# Ne pas ignorer les migrations
+!packages/database/prisma/migrations/
+
+# ── Turbo ─────────────────────────────────────────────────────
+.turbo/
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ── IDE ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+
+# ── Tests ────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ── Docker (volumes locaux) ───────────────────────────────────
+docker/postgres/data/
+docker/redis/data/
+
+# ── Uploads locaux ───────────────────────────────────────────
+apps/api/uploads/
