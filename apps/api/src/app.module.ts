@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
-import { BullModule } from '@nestjs/bull';
 import { ScheduleModule } from '@nestjs/schedule';
 
 import { PrismaModule } from './prisma/prisma.module';
@@ -43,25 +42,6 @@ import { MediaModule } from './modules/media/media.module';
         ttl: 60000,
         limit: config.get<number>('RATE_LIMIT_MAX', 100),
       }]),
-    }),
-
-    // Queue (Bull + Redis)
-    BullModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (config: ConfigService) => ({
-        redis: {
-          host: config.get('REDIS_HOST', 'localhost'),
-          port: config.get<number>('REDIS_PORT', 6379),
-          password: config.get('REDIS_PASSWORD') || undefined,
-        },
-        defaultJobOptions: {
-          removeOnComplete: 100,
-          removeOnFail: 200,
-          attempts: 3,
-          backoff: { type: 'exponential', delay: 2000 },
-        },
-      }),
     }),
 
     // Cron jobs
