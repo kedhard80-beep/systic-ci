@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  ...(process.env.NODE_ENV === "production" ? { output: "standalone" } : {}),
+  // output: "standalone" retiré — non compatible Vercel (utiliser pour Docker uniquement)
 
   // ===== IMAGES =====
   images: {
