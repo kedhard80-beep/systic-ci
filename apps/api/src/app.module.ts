@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ScheduleModule } from '@nestjs/schedule';
+import { AppController } from './app.controller';
 
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
@@ -30,6 +31,7 @@ import { PortfolioModule } from './modules/portfolio/portfolio.module';
 import { MediaModule } from './modules/media/media.module';
 
 @Module({
+  controllers: [AppController],
   imports: [
     // Config
     ConfigModule.forRoot({ isGlobal: true, cache: true }),
