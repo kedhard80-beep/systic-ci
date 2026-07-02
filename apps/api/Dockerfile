@@ -41,5 +41,5 @@ RUN addgroup --system --gid 1001 nodejs \
 USER nestjs
 
 EXPOSE 4000
-# Exécute les migrations puis démarre l'API
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/main"]
+# Synchronise le schéma Prisma puis démarre l'API
+CMD ["sh", "-c", "npx prisma@6 db push --skip-generate --accept-data-loss && node dist/main"]
