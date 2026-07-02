@@ -46,7 +46,7 @@ export class AcademieService {
       this.prisma.course.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           modules: { orderBy: { order: 'asc' } },
           formateur: { include: { user: { select: { firstName: true, lastName: true } } } },

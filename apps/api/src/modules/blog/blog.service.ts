@@ -59,7 +59,7 @@ export class BlogService {
       this.prisma.blogPost.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         select: {
           id: true,
           slug: true,

@@ -34,7 +34,7 @@ export class TechniciensService {
       this.prisma.technicien.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           user: {
             select: {

@@ -41,7 +41,7 @@ export class ClientsService {
       this.prisma.client.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           contacts: { take: 1, where: { isPrimary: true } },
           _count: {

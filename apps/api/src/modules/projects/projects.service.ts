@@ -49,7 +49,7 @@ export class ProjectsService {
       this.prisma.project.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           client: { select: { id: true, nom: true, entreprise: true } },
           techniciens: {

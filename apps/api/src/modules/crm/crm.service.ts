@@ -51,7 +51,7 @@ export class CrmService {
       this.prisma.lead.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         orderBy: { updatedAt: 'desc' },
       }),
       this.prisma.lead.count({ where }),

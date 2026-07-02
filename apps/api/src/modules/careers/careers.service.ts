@@ -50,7 +50,7 @@ export class CareersService {
       this.prisma.career.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: { _count: { select: { applications: true } } },
         orderBy: { createdAt: 'desc' },
       }),
@@ -138,7 +138,7 @@ export class CareersService {
       this.prisma.application.findMany({
         where: { careerId: jobId },
         skip,
-        take: limit,
+        take: Number(limit),
         orderBy: { createdAt: 'desc' },
       }),
       this.prisma.application.count({ where: { careerId: jobId } }),

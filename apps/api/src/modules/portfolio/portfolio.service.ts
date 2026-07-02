@@ -48,7 +48,7 @@ export class PortfolioService {
       this.prisma.portfolioItem.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         orderBy: [{ featured: 'desc' }, { date: 'desc' }],
       }),
       this.prisma.portfolioItem.count({ where }),
@@ -110,7 +110,7 @@ export class PortfolioService {
     return this.prisma.portfolioItem.findMany({
       where: { tenantId, isPublished: true, featured: true },
       orderBy: { date: 'desc' },
-      take: limit,
+      take: Number(limit),
     });
   }
 }

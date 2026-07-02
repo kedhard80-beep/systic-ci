@@ -52,7 +52,7 @@ export class ProductsService {
       this.prisma.product.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           stocks: { select: { warehouse: true, quantity: true, available: true } },
         },

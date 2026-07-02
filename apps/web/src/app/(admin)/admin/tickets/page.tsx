@@ -98,7 +98,7 @@ export default function AdminTicketsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="font-heading font-extrabold text-2xl text-grey-anthracite dark:text-white">Tickets Support</h1>
-          <p className="text-sm text-grey-text dark:text-white/50 mt-0.5">{data?.meta.total ?? 0} tickets</p>
+          <p className="text-sm text-grey-text dark:text-white/50 mt-0.5">{data?.meta?.total ?? 0} tickets</p>
         </div>
         <div className="flex gap-2">
           <button onClick={() => refetch()} className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-heading font-semibold text-grey-text dark:text-white/60 border border-border hover:border-primary hover:text-primary transition-all">

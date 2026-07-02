@@ -60,7 +60,7 @@ export class NotificationsService {
       this.prisma.notification.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         orderBy: { createdAt: 'desc' },
       }),
       this.prisma.notification.count({ where }),

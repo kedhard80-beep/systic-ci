@@ -89,7 +89,7 @@ export default function AdminCarrieresPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="font-heading font-extrabold text-2xl text-grey-anthracite dark:text-white">Carrières</h1>
-          <p className="text-sm text-grey-text dark:text-white/50 mt-0.5">{data?.meta.total ?? 0} offres d'emploi</p>
+          <p className="text-sm text-grey-text dark:text-white/50 mt-0.5">{data?.meta?.total ?? 0} offres d'emploi</p>
         </div>
         <div className="flex gap-2">
           <button onClick={() => refetch()} className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-heading font-semibold text-grey-text dark:text-white/60 border border-border hover:border-primary hover:text-primary transition-all">
@@ -104,8 +104,8 @@ export default function AdminCarrieresPage() {
       <div className="grid grid-cols-3 gap-4">
         {[
           { label: "Offres actives", value: data?.meta.active ?? 0, color: "text-emerald-600" },
-          { label: "Total offres", value: data?.meta.total ?? 0, color: "text-primary" },
-          { label: "Candidatures", value: data?.meta.totalApplications ?? 0, color: "text-blue-500" },
+          { label: "Total offres", value: data?.meta?.total ?? 0, color: "text-primary" },
+          { label: "Candidatures", value: data?.meta?.totalApplications ?? 0, color: "text-blue-500" },
         ].map(({ label, value, color }) => (
           <div key={label} className="bg-white dark:bg-navy/40 rounded-2xl border border-border p-4">
             <p className={cn("text-2xl font-heading font-extrabold", color)}>{value}</p>

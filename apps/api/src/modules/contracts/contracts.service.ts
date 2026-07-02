@@ -50,7 +50,7 @@ export class ContractsService {
       this.prisma.contract.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           client: { select: { id: true, nom: true, entreprise: true } },
           _count: { select: { interventions: true, invoices: true } },

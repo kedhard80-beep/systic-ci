@@ -56,7 +56,7 @@ export class TicketsService {
       this.prisma.ticket.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           createdBy: { select: { firstName: true, lastName: true } },
           assignedTo: { select: { firstName: true, lastName: true } },

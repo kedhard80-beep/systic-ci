@@ -28,7 +28,7 @@ export class MediaService {
       this.prisma.media.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         orderBy: { createdAt: 'desc' },
       }),
       this.prisma.media.count({ where }),

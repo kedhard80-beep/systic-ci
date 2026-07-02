@@ -57,7 +57,7 @@ export class InvoicesService {
       this.prisma.invoice.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           client: { select: { id: true, nom: true, entreprise: true } },
           contract: { select: { id: true, reference: true } },

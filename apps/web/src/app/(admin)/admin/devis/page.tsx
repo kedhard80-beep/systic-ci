@@ -209,7 +209,7 @@ export default function AdminDevisPage() {
   });
 
   const leads = data?.data ?? [];
-  const total = data?.meta.total ?? 0;
+  const total = data?.meta?.total ?? 0;
 
   function openConvert(lead: Lead) {
     const services = extractServices(lead.notes);

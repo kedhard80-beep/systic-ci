@@ -51,7 +51,7 @@ export class InterventionsService {
       this.prisma.intervention.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           client: { select: { id: true, nom: true, entreprise: true, adresse: true } },
           techniciens: {

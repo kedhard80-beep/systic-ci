@@ -43,7 +43,7 @@ export class QuotesService {
       this.prisma.quote.findMany({
         where,
         skip,
-        take: limit,
+        take: Number(limit),
         include: {
           client: { select: { id: true, nom: true, entreprise: true } },
           items: true,

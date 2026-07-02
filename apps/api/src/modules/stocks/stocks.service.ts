@@ -24,7 +24,7 @@ export class StocksService {
 
   async getStock(tenantId: string, params: { productId?: string; warehouse?: string }) {
     const { productId, warehouse } = params;
-    return this.prisma.stock.findMany({
+    const data = await this.prisma.stock.findMany({
       where: {
         tenantId,
         ...(productId && { productId }),
@@ -37,6 +37,7 @@ export class StocksService {
       },
       orderBy: [{ warehouse: 'asc' }, { product: { name: 'asc' } }],
     });
+    return { data, meta: { total: data.length } };
   }
 
   async getProductStock(productId: string, tenantId: string) {
