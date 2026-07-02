@@ -20,8 +20,8 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY apps/api/ .
 COPY packages/database/prisma ./prisma
-# Générer le client Prisma puis compiler
-RUN npx prisma generate
+# Générer le client Prisma v6 puis compiler
+RUN npx prisma@6 generate
 RUN npm run build
 
 # ── 4. Production ────────────────────────────────────────────
