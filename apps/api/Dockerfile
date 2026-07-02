@@ -42,4 +42,4 @@ USER nestjs
 
 EXPOSE 4000
 # Synchronise le schéma Prisma puis démarre l'API
-CMD ["sh", "-c", "npx prisma@6 db push --skip-generate --accept-data-loss && node dist/main"]
+CMD ["node", "dist/main"]
