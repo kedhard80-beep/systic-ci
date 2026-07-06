@@ -24,7 +24,9 @@ export const SITE = {
   },
   social: {
     facebook: "https://facebook.com/systic.ci",
+    instagram: "https://instagram.com/systic.ci",
     linkedin: "https://linkedin.com/company/systic-ci",
+    tiktok: "https://tiktok.com/@systic.ci",
     whatsapp: "https://wa.me/2250173032525",
     youtube: "https://youtube.com/@systic-ci",
   },

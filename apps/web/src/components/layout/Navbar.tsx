@@ -155,10 +155,10 @@ export default function Navbar() {
             {/* LOGO */}
             <Link href="/" aria-label="SYSTIC-CI — Accueil" className="hover:opacity-90 transition-opacity duration-200">
               <span className="block dark:hidden">
-                <SysticLogo variant="light" height={36} />
+                <SysticLogo variant="light" height={48} />
               </span>
               <span className="hidden dark:block">
-                <SysticLogo variant="dark" height={36} />
+                <SysticLogo variant="dark" height={48} />
               </span>
             </Link>
 
